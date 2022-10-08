@@ -12,7 +12,7 @@
 		{
 			"type":"shell",
 			"label": "run executable",
-			"command": "${workspaceRoot}/build/VSCodeCppTemplate.exe",
+			"command": "${workspaceRoot}/build/a.exe",
 			"dependsOn":["cmake"],
 			"dependsOrder": "sequence",
 			"group": {
