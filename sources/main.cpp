@@ -1,32 +1,20 @@
 // ----------STLのinclude----------
 #include <iostream> // 入出力
 #include <vector>
-
-template <class T>
-void func(const T &val)
-{
-    std::cout << "val ver" << std::endl;
-}
-
-template <class T>
-void func(const std::vector<T> &val)
-{
-    std::cout << "vector ver" << std::endl;
-}
-
-template <>
-void func(const float &val)
-{
-    std::cout << "float ver" << std::endl;
-}
+#include "./Encoder.h"
+#include "./EncodeExp.h"
 
 int main(void)
 {
-    float a = 0;
-    std::vector<float> b{};
+    auto encoder = Encoder();
+
     int i = 0;
-    func(a);
-    func(b);
-    func(i);
+    std::vector<float> v{};
+    float f = 0;
+
+    encoder.func(i);
+    encoder.func(v);
+    encoder.func(f);
+
     std::cout << "Hello World" << std::endl;
 }
