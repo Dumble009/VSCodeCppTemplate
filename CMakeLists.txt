@@ -9,6 +9,7 @@ project(${ProjectName} VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
+add_subdirectory(tests)
 
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false RELATIVE "${CMAKE_SOURCE_DIR}" CONFIGURE_DEPENDS "sources/*.cpp")
 
