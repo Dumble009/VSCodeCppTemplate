@@ -17,6 +17,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
           name: "Say hello2"
           command: "echo Hello, World! again"
 
