@@ -3,4 +3,4 @@ jobs:
   build:
     steps:
       - checkout
-      - run: echo "hello circleCI"
+      - run: echo "hello world"
