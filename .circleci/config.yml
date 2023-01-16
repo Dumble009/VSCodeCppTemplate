@@ -18,6 +18,9 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run:
+          name: "make dir"
+          command: "mkdir build"
+      - run:
           name: "cmake"
           command: "cmake --build ./build --config Release --target all -j 8 --"
 
