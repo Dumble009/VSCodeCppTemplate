@@ -16,10 +16,10 @@ jobs:
       - checkout
       - run:
           name: "clone dependency"
-          command: "git clone https://github.com/Dumble009/MathLib.git"
+          command: "git clone https://github.com/Dumble009/CircleCITestLibrary.git"
       - run:
           name: "move into dependency"
-          command: "cd MathLib; cd ../"
+          command: "cd CircleCITestLibrary; cd ../"
       - run:
           name: "make dir"
           command: "mkdir build"
