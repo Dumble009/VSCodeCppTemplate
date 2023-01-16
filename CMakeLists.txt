@@ -6,7 +6,7 @@ set(ProjectName a)
 
 project(${ProjectName} VERSION 0.1.0)
 
-if(NOT ENV{CIRCLECI})
+if(NOT DEFINED ENV{CIRCLECI})
 include("C:/MyLib/CMakeModules/deploy.cmake")
 endif()
 
@@ -22,7 +22,7 @@ target_include_directories(${ProjectName} PUBLIC "${CMAKE_SOURCE_DIR}/sources")
 #target_link_directories(VulkanStudy PUBLIC "C:/opengl/glfw-3.3.8.bin.WIN64/lib-mingw-w64/" "C:/VulkanSDK/1.3.216.0/Lib")
 #target_link_libraries(VulkanStudy glfw3 opengl32 vulkan-1)
 
-if(NOT ENV{CIRCLECI})
+if(NOT DEFINED ENV{CIRCLECI})
 deploy_lib("test" ${ProjectName} ${ProjectName})
 endif()
 
