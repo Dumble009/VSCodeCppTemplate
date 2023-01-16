@@ -25,7 +25,7 @@ jobs:
           command: "sh ./.circleci/build.sh"
       - run:
           name: "return from dependency"
-          comamnd: "cd ../"
+          command: "cd ../"
       - run:
           name: "build"
           command: "sh ./.circleci/build.sh"
