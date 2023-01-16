@@ -20,7 +20,7 @@ jobs:
       - run:
           name: "move into dependency"
           command: "cd CircleCITestLibrary"
-      -run:
+      - run:
           name: "build dependency"
           command: "sh ./.circleci/build.sh"
       -run:
