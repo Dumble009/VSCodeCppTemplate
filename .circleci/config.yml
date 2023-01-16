@@ -19,19 +19,16 @@ jobs:
           command: "git clone https://github.com/Dumble009/CircleCITestLibrary.git"
       - run:
           name: "move into dependency"
-          command: "cd CircleCITestLibrary; cd ../"
+          command: "cd CircleCITestLibrary"
+      -run:
+          name: "build dependency"
+          command: "sh ./.circleci/build.sh"
+      -run:
+          name: "return from dependency"
+          comamnd: "cd ../"
       - run:
           name: "build"
           command: "sh ./.circleci/build.sh"
-      #- run:
-      #    name: "make dir"
-      #    command: "mkdir build"
-      #- run:
-      #    name: "build cmake cache"
-      #    command: "cd build; cmake ..; cd ../"
-      #- run:
-      #    name: "cmake"
-      #    command: "cmake --build ./build --config Release --target all -j 8 --"
       - run:
           name: "run gtest"
           command: "./build/tests/GTest"
