@@ -22,7 +22,7 @@ jobs:
           command: "cd CircleCITestLibrary; cd ../"
       - run:
           name: "build"
-          command: "sh ./.circleci/build.bat"
+          command: "sh ./.circleci/build.sh"
       #- run:
       #    name: "make dir"
       #    command: "mkdir build"
