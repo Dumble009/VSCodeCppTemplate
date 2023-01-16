@@ -21,17 +21,20 @@ jobs:
           name: "move into dependency"
           command: "cd CircleCITestLibrary; cd ../"
       - run:
-          name: "make dir"
-          command: "mkdir build"
-      - run:
-          name: "build cmake cache"
-          command: "cd build; cmake ..; cd ../"
-      - run:
-          name: "cmake"
-          command: "cmake --build ./build --config Release --target all -j 8 --"
-      - run:
-          name: "run gtest"
-          command: "./build/tests/GTest"
+          name: "build"
+          command: "./.circleci/build.bat"
+      #- run:
+      #    name: "make dir"
+      #    command: "mkdir build"
+      #- run:
+      #    name: "build cmake cache"
+      #    command: "cd build; cmake ..; cd ../"
+      #- run:
+      #    name: "cmake"
+      #    command: "cmake --build ./build --config Release --target all -j 8 --"
+      #- run:
+      #    name: "run gtest"
+      #    command: "./build/tests/GTest"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
