@@ -15,18 +15,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "clone dependency"
-          command: "git clone https://github.com/Dumble009/CircleCITestLibrary.git"
-      - run:
-          name: "move into dependency"
-          command: "cd CircleCITestLibrary"
-      - run:
-          name: "build dependency"
-          command: "sh ./.circleci/build.sh"
-      - run:
-          name: "return from dependency"
-          command: "cd ../"
-      - run:
           name: "build"
           command: "sh ./.circleci/build.sh"
       - run:
