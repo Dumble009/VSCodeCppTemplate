@@ -14,11 +14,12 @@ include(CTest)
 enable_testing()
 add_subdirectory(tests)
 
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false RELATIVE "${CMAKE_SOURCE_DIR}" CONFIGURE_DEPENDS "sources/*.cpp")
+file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false CONFIGURE_DEPENDS "sources/*.cpp")
 
 add_executable(${ProjectName} ${SOURCES})
 
 include(FetchContent)
+
 FetchContent_Declare(
   testlib
   GIT_REPOSITORY  https://github.com/Dumble009/CircleCITestLibrary.git
@@ -26,7 +27,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(testlib)
 
-target_include_directories(${ProjectName} PUBLIC "${CMAKE_SOURCE_DIR}/sources" "${testlib_SOURCE_DIR}/libsources")
+target_include_directories(${ProjectName} PUBLIC "sources" "${testlib_SOURCE_DIR}/libsources")
 target_link_directories(${ProjectName} PUBLIC "${testlib_BINARY_DIR}")
 target_link_libraries(${ProjectName} CircleCITest)
 
