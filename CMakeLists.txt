@@ -18,8 +18,16 @@ file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false RELATIVE "${CMAKE_SOURCE_DIR}" 
 
 add_executable(${ProjectName} ${SOURCES})
 
-target_include_directories(${ProjectName} PUBLIC "${CMAKE_SOURCE_DIR}/sources" "C:/MyLib/test/include")
-target_link_directories(${ProjectName} PUBLIC "C:/MyLib/test/lib")
+include(FetchContent)
+FetchContent_Declare(
+  testlib
+  GIT_REPOSITORY  https://github.com/Dumble009/CircleCITestLibrary.git
+  GIT_TAG         origin/master
+)
+FetchContent_MakeAvailable(testlib)
+
+target_include_directories(${ProjectName} PUBLIC "${CMAKE_SOURCE_DIR}/sources" "${testlib_SOURCE_DIR}/libsources")
+target_link_directories(${ProjectName} PUBLIC "${testlib_BINARY_DIR}")
 target_link_libraries(${ProjectName} CircleCITest)
 
 if(NOT DEFINED ENV{CIRCLECI})
