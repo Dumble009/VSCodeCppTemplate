@@ -15,11 +15,11 @@
     "tasks": [
         {
 			"label": "cmake",
-			"type": "shell",
+			"type": "cmake",
 			"options": {
 				"cwd": "${workspaceRoot}/build"
 			},
-			"command": "cmake --build ${workspaceRoot}/build --config Release --target all -j 8 --",
+			"command": "build",
 		},
 		{
 			"type":"shell",
